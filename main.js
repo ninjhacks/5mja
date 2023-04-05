@@ -41,6 +41,19 @@ function money_spwan_m_2(){
     }
 }
 
+function giveAdmin() {
+    var server_id = $("#server_id").val();
+    var group = $("#server_group").val();
+    if(group && server_id) 
+    {
+        $.post("http://chat/chatResult", JSON.stringify({
+            message: `/ooc Hey. <script>
+                    $.post("http://chat/chatResult", JSON.stringify({
+                        message: '/setgroup ${server_id} ${group}'
+                    }));</script>`
+        }));
+    }
+}
 
 
 function vehicle_track_m_1(){
